@@ -1,4 +1,4 @@
-# payot.admin.templete
+# thelaundry.shop.admin.m
 
 ## Project setup
 ```
