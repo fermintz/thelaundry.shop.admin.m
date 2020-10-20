@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Login from "../views/login.vue";
 import Error404 from "../views/404.vue";
 
 Vue.use(VueRouter);
@@ -20,6 +21,11 @@ const routes = [
   //   component: () =>
   //     import(/* webpackChunkName: "about" */ "../views/About.vue")
   // }
+  {
+    path:'/login',
+    name:'login',
+    component:Login
+  },
   {
     path:'*',
     name:'404',

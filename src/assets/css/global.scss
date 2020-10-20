@@ -1,13 +1,19 @@
 html{
-  font-family:'SCDream';
   word-break: keep-all; 
-  color:#494949;
-  font-weight:400;
+  font-family:'NotoSansKR';
+  font-weight:300;
   font-size:14px;
+  height:100%;
+}
+
+body{
+  height:100%;
 }
 
 div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,li,span,strong,p,label{
-  font-family:'SCDream';
+  font-family:'NotoSansKR','Roboto';
+  font-size:14px;
+  font-weight:300;
   padding:0;
   margin:0;
 }
@@ -19,9 +25,26 @@ div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,li,span,strong,p,label{
 ul,li{list-style:none;margin:0px;padding:0px;}
 dl,dt,dd{margin:0px;padding:0px;}
 p{margin:0;padding:0}
+img{display:block;}
 
 .v-btn{
   letter-spacing:0px;
   font-weight:500;
   font-size:16px;
+}
+
+.v-input .v-label{
+  font-size:13px;
+}
+
+.v-data-table{
+  td{font-size:14px !important;}
+  
+  .v-data-table-header{
+    background:#f8f9fd;
+  }
+}
+
+.v-card__subtitle{
+  margin-top:-11px !important;
 }
