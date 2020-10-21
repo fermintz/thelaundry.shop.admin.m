@@ -18,6 +18,7 @@
   align-items: center;
   height:100%;
   text-align:center;
+  padding:20px;
 
   h2{
     font-size:140px;
