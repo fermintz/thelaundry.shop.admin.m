@@ -1,10 +1,48 @@
 <template>
   <div class="wrap">
+    <div class="top_info">
+      <Splide
+        :options="options"
+      >
+        <SplideSlide>
+          <div class="totalItem">
+            <label>이번달 총 매출</label>
+            <span>
+              <strong>421,000</strong> 원
+            </span>
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div class="totalItem">
+            <label>키오스크(현금) 총 매출</label>
+            <span>
+              <strong>94,000</strong> 원
+            </span>
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div class="totalItem">
+            <label>키오스크(카드) 총 매출</label>
+            <span>
+              <strong>74,000</strong> 원
+            </span>
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div class="totalItem">
+            <label>장비현금 총 매출</label>
+            <span>
+              <strong>54,000</strong> 원
+            </span>
+          </div>
+        </SplideSlide>
+      </Splide>
+    </div>
     <div class="calendar-control">
-      <v-btn icon>
+      <v-btn text class="arrow">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
-      <div class="dateSelect">
+      <div class="yearSelect">
         <v-dialog
           ref="dateDialog"
           v-model="datePicker"
@@ -17,6 +55,7 @@
               v-bindd="attrs"
               width="100%"
               color="unset"
+              class="yearBtn"
               text
             >
               {{date}}
@@ -32,7 +71,7 @@
           />
         </v-dialog>
       </div>
-      <v-btn icon>
+      <v-btn text class="arrow">
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
     </div>
@@ -73,40 +112,57 @@
 
 
 export default {
+
   data(){
     return{
       date: new Date().toISOString().substr(0, 7),
       datePicker:false,
-    }
-  },
-  components: {
+      options: {
+        type:'slide',
+        rewind: false,
+        gap   : '1rem',
+        arrows:false,
+        fixedWidth:180,
+        pagination:false,
+        padding:{
+          left:10,
+        },
 
+      },
+    }
   },
   methods:{
     convertMonth(value){
       return value.substring(5,7) + '월'
+    },
+    moved( splide, newIndex ) {
+      console.log( 'moved', newIndex );
     },
   }
 };
 </script>
 
 <style lang="scss" scoped>
+
 .calendar-control{
   display:flex;
   align-items: center;
   justify-content: space-between;
   border-bottom:1px solid #e2e2e2;
-  height:40px;
-  background:#f2f2f2;
+  height:50px;
+  background:#fff;
 
-  .yearSelect{
-    font-size:18px;
-    font-weight:500;
+  .yearBtn{
+    background:#00A0E9;
+    max-height:30px;
+    border-radius:20px;
+    color:#fff;
   }
-
-  .v-btn{
-    width:40px;
-    height:40px;
+  
+  .v-btn.arrow{
+    min-width:50px;
+    height:50px;
+    border-radius:0px;
   }
 }
 

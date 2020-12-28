@@ -1,5 +1,27 @@
 <template>
   <div class="member">
+    <div class="top_info">
+      <Splide
+        :options="options"
+      >
+        <SplideSlide>
+          <div class="totalItem">
+            <label>전체 회원수</label>
+            <span>
+              <strong>310</strong> 명
+            </span>
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div class="totalItem">
+            <label>이번달 신규회원수</label>
+            <span>
+              <strong>6</strong> 명
+            </span>
+          </div>
+        </SplideSlide>
+      </Splide>
+    </div>
     <div class="phoneSearch">
       <v-text-field 
         outlined
@@ -11,7 +33,7 @@
         flat
       />
     </div>
-    <ul>
+    <ul class="memberList">
       <li 
         v-for="item in 10" 
         :key="item"
@@ -38,6 +60,21 @@
 import PointControl from '@/components/modal/pointControl'
 
 export default {
+  data(){
+    return{
+       options: {
+        type:'loop',
+        rewind: false,
+        gap   : '1rem',
+        arrows:false,
+        fixedWidth:180,
+        pagination:false,
+        padding:{
+          left:10,
+        },
+      },
+    }
+  },
   components:{
     PointControl
   }
@@ -47,11 +84,12 @@ export default {
 <style lang="scss" scoped>
 
 .phoneSearch{
+  border-top:1px solid #e2e2e2;
   border-bottom:1px solid #e2e2e2;
   padding:10px;
 }
 
-ul{
+.memberList{
   padding:0px;
   li{
     display:flex;

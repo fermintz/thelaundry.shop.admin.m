@@ -1,7 +1,7 @@
 html{
   word-break: keep-all; 
   font-family:'NotoSansKR';
-  font-weight:300;
+  font-weight:400;
   font-size:14px;
   height:100%;
 }
@@ -11,9 +11,9 @@ body{
 }
 
 div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,li,span,strong,p,label{
-  font-family:'NotoSansKR','Roboto';
+  font-family:'Roboto','NotoSansKR';
   font-size:14px;
-  font-weight:300;
+  font-weight:400;
   padding:0;
   margin:0;
 }
@@ -72,5 +72,39 @@ img{display:block;}
   }
   .card-body{
     padding:15px
+  }
+}
+
+.top_info{
+  padding:10px 0;
+  background:#f8f8f8;
+
+  .totalItem{
+    width:100%;
+    background:#fff;
+    border:1px solid #e2e2e2;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.1);
+    padding:10px;
+    border-radius:5px;
+    min-height:80px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    label{
+      display:block;
+      margin-bottom:10px;
+    }
+    span{
+      display:block;
+      text-align:right;
+
+      strong{
+        font-family:'Roboto';
+        font-weight:500;
+        font-size:18px;
+        color:#f50459
+      }
+    }
   }
 }
